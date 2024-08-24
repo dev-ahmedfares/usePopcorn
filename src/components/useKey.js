@@ -1,0 +1,18 @@
+import { useEffect,useState } from "react";
+
+export function useKey(key,action) {
+    useEffect(() => {
+        function callback(e) {
+          if (e.code.toUpperCase() === key.toUpperCase()) {
+            action();
+            
+          }
+        }
+    
+        document.addEventListener("keydown", callback);
+    
+        return function () {
+          document.removeEventListener("keydown", callback);
+        };
+      }, [action,key]);
+}
