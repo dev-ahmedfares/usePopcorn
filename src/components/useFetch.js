@@ -14,7 +14,7 @@ export function useFetch(key,query) {
             setError("");
     
             const res = await fetch(
-              `http://www.omdbapi.com/?apikey=${key}&s=${query}`,
+              `https://www.omdbapi.com/?apikey=${key}&s=${query}`,
               { signal: controller.signal }
             );
     
@@ -42,7 +42,7 @@ export function useFetch(key,query) {
         }
         // handleCloseMovie();
         fetchMovies();
-    
+        
         return () => controller.abort();
       }, [key,query]);
 
