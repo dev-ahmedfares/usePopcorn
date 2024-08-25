@@ -226,7 +226,7 @@ function MovieDetails({ movieId, onClick, onAddWatchedMovie, watched }) {
         setMovieLoading(true);
         setMovieError("");
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${key}&i=${movieId}`
+          `https://www.omdbapi.com/?apikey=${key}&i=${movieId}`
         );
 
         if (!res.ok) throw new Error("❌ Faild To Fetch Data");
